@@ -1,25 +1,25 @@
 /// <reference types="vite/client" />
 /// <reference types="vitest" />
 
-import type { Wrapper } from '@vue/test-utils';
+import type { Wrapper } from '@vue/test-utils'
 import {
   type ExtractPropTypes,
   type ExtractDefaultPropTypes,
   type DefineComponent,
-} from 'vue';
+} from 'vue'
 
 import {
   type ComputedOptions,
   type ComponentOptionsMixin,
   type MethodOptions,
-} from 'vue/types/v3-component-options';
-import { type EmitsOptions } from 'vue/types/v3-setup-context';
+} from 'vue/types/v3-component-options'
+import { type EmitsOptions } from 'vue/types/v3-setup-context'
 
 /** Vue */
 declare module '*.vue' {
-  import { type defineComponent } from 'vue';
-  const Component: ReturnType<typeof defineComponent>;
-  export default Component;
+  import { type defineComponent } from 'vue'
+  const Component: ReturnType<typeof defineComponent>
+  export default Component
 }
 
 /**
@@ -48,8 +48,8 @@ declare module '@vue/test-utils' {
     Defaults extends Record<
       string,
       any
-    > = ExtractDefaultPropTypes<PropsOrPropOptions>,
-  >(
+    > = ExtractDefaultPropTypes<PropsOrPropOptions>
+  > (
     component: DefineComponent<
       PropsOrPropOptions,
       RawBindings,
@@ -80,7 +80,7 @@ declare module '@vue/test-utils' {
         Defaults
       >
     >
-  >;
+  >
 
   /**
    * Component declared with defineComponent
@@ -102,8 +102,8 @@ declare module '@vue/test-utils' {
     Defaults extends Record<
       string,
       any
-    > = ExtractDefaultPropTypes<PropsOrPropOptions>,
-  >(
+    > = ExtractDefaultPropTypes<PropsOrPropOptions>
+  > (
     component: DefineComponent<
       PropsOrPropOptions,
       RawBindings,
@@ -134,7 +134,7 @@ declare module '@vue/test-utils' {
         Defaults
       >
     >
-  >;
+  >
 }
 
 interface ImportMetaEnv {
@@ -144,7 +144,6 @@ interface ImportMetaEnv {
   readonly VITE_APP_WEBSTORAGE_NAMESPACE: string;
 }
 
-// eslint-disable-next-line no-unused-vars
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }

@@ -5,13 +5,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, type SetupContext } from 'vue';
+import { defineComponent, watch, type SetupContext } from 'vue'
 
 // import { useStore } from '@logue/vue2-helpers/vuex';
-import { useRoute } from 'vue-router/composables';
+import { useRoute } from 'vue-router/composables'
 
 // Components
-import TheWelcome from '@/components/TheWelcome.vue';
+import TheWelcome from '@/components/TheWelcome.vue'
 
 /** Home Component */
 export default defineComponent({
@@ -25,9 +25,9 @@ export default defineComponent({
    * @param _props - Props
    * @param _context - Context
    */
-  setup(_props, _context: SetupContext) {
+  setup (_props, _context: SetupContext) {
     /** Route */
-    const route = useRoute();
+    const route = useRoute()
     /** Vuex */
     // const store = useStore();
 
@@ -44,7 +44,7 @@ export default defineComponent({
     watch(
       () => route?.name,
       name => console.log('route is changed:', name)
-    );
+    )
   },
-});
+})
 </script>

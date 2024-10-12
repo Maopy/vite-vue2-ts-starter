@@ -32,10 +32,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type SetupContext } from 'vue';
+import { defineComponent, type SetupContext } from 'vue'
 
-import logo from '@/assets/vue.svg';
-import HelloWorld from '@/components/HelloWorld.vue';
+import logo from '@/assets/vue.svg'
+import HelloWorld from '@/components/HelloWorld.vue'
 
 /** App Component */
 export default defineComponent({
@@ -45,11 +45,11 @@ export default defineComponent({
   /**
    * Setup
    *
-   * @param _props - Props
+   * @param_ props - Props
    * @param _context - Context
    */
-  setup(_props, _context: SetupContext) {
-    document.title = import.meta.env.VITE_APP_TITLE || 'Vite Vue2 Application';
+  setup (_props, _context: SetupContext) {
+    document.title = import.meta.env.VITE_APP_TITLE || 'Vite Vue2 Application'
 
     /** JSON LD Sample */
     const jsonLd = JSON.stringify(
@@ -64,14 +64,14 @@ export default defineComponent({
       },
       null,
       2
-    );
+    )
 
     return {
       logo,
       jsonLd,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss">

@@ -34,11 +34,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type SetupContext } from 'vue';
+import { defineComponent, type SetupContext } from 'vue'
 
-import type MetaInterface from '@/interfaces/MetaInterface';
+import type MetaInterface from '@/interfaces/MetaInterface'
 
-import Meta from '@/Meta';
+import Meta from '@/Meta'
 
 /** HelloWorld Component */
 export default defineComponent({
@@ -52,18 +52,18 @@ export default defineComponent({
    * @param _props - Props
    * @param _context - Context
    */
-  setup(_props, _context: SetupContext) {
+  setup (_props, _context: SetupContext) {
     /** Meta information */
-    const meta: MetaInterface = Meta;
+    const meta: MetaInterface = Meta
 
-    const title = import.meta.env.VITE_APP_TITLE;
+    const title = import.meta.env.VITE_APP_TITLE
 
     return {
       meta,
       title,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

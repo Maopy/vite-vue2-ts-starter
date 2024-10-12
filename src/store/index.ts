@@ -5,9 +5,9 @@ import type {
   GetterTree,
   MutationTree,
   StoreOptions,
-} from 'vuex';
+} from 'vuex'
 
-import { createStore } from '@logue/vue2-helpers/vuex';
+import { createStore } from '@logue/vue2-helpers/vuex'
 
 // TODO: State Interface
 export interface RootState {
@@ -17,19 +17,19 @@ export interface RootState {
 /** State */
 const state: RootState = {
   exampleData: null,
-};
+}
 
 /** Getters */
 const getters: GetterTree<RootState, RootState> = {
   example: (s: RootState) => s.exampleData,
-};
+}
 
 /** Mutation */
 const mutations: MutationTree<RootState> = {
-  exampleMutation(s: RootState, payload: any) {
-    s.exampleData = payload;
+  exampleMutation (s: RootState, payload: any) {
+    s.exampleData = payload
   },
-};
+}
 
 /** Action */
 const actions: ActionTree<RootState, RootState> = {
@@ -39,11 +39,11 @@ const actions: ActionTree<RootState, RootState> = {
    * @param context - Vuex Context
    * @param data - Payload data
    */
-  exampleAction(context: ActionContext<RootState, RootState>, data: any) {
+  exampleAction (context: ActionContext<RootState, RootState>, data: any) {
     // ...
-    context.commit('exampleMutation', data);
+    context.commit('exampleMutation', data)
   },
-};
+}
 
 /** VuexStore */
 const store: StoreOptions<RootState> = {
@@ -57,26 +57,7 @@ const store: StoreOptions<RootState> = {
     // SomeModule,
   },
   plugins: [
-    /*
-    // store as local storage using vuex-persist
-    new VuexPersistence({
-      key: import.meta.env.VITE_APP_WEBSTORAGE_NAMESPACE,
-      storage: window.localStorage,
-      modules: ['SomeModule'],
-    }).plugin,
-    // store as session storage
-    new VuexPersistence({
-      key: import.meta.env.VITE_APP_WEBSTORAGE_NAMESPACE,
-      storage: window.sessionStorage,
-      modules: ['SomeModule'],
-    }).plugin,
-    // store as Indexed DB (using vuex-persist-indexeddb)
-    createPersistedState({
-      key: import.meta.env.VITE_APP_WEBSTORAGE_NAMESPACE,
-      paths: ['SomeLargeModule'],
-    }),
-    */
   ],
-};
+}
 
-export default createStore(store);
+export default createStore(store)

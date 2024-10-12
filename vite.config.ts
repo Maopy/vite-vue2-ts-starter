@@ -1,13 +1,12 @@
-import { writeFileSync } from 'node:fs';
-import { fileURLToPath, URL } from 'node:url';
+import { writeFileSync } from 'node:fs'
+import { fileURLToPath, URL } from 'node:url'
 
-import vue from '@vitejs/plugin-vue2';
-import { defineConfig, type UserConfig } from 'vite';
+import vue from '@vitejs/plugin-vue2'
+import { defineConfig, type UserConfig } from 'vite'
 
-import { visualizer } from 'rollup-plugin-visualizer';
-import { checker } from 'vite-plugin-checker';
+import { visualizer } from 'rollup-plugin-visualizer'
 
-import pkg from './package.json';
+import pkg from './package.json'
 
 /**
  * Vite Configure
@@ -21,18 +20,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     plugins: [
       // Vue2
       // https://github.com/vitejs/vite-plugin-vue2
-      vue(),
-      // vite-plugin-checker
-      // https://github.com/fi3ework/vite-plugin-checker
-      checker({
-        typescript: true,
-        // vueTsc: true,
-        // eslint: {lintCommand: 'eslint'},
-        // stylelint: {lintCommand: 'stylelint'},
-      }),
-      // compress assets
-      // https://github.com/vbenjs/vite-plugin-compression
-      // viteCompression(),
+      vue()
     ],
     // Resolver
     resolve: {
@@ -67,7 +55,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
               'vue-router',
               'vue-router/composables',
               'vuex',
-              // 'vuex-persist',
               // 'deepmerge',
               '@logue/vue2-helpers',
               '@logue/vue2-helpers/teleport',
@@ -78,13 +65,13 @@ export default defineConfig(({ command, mode }): UserConfig => {
           plugins: [
             mode === 'analyze'
               ? // rollup-plugin-visualizer
-                // https://github.com/btd/rollup-plugin-visualizer
-                visualizer({
-                  open: true,
-                  filename: 'dist/stats.html',
-                  // gzipSize: true,
-                  // brotliSize: true,
-                })
+            // https://github.com/btd/rollup-plugin-visualizer
+              visualizer({
+                open: true,
+                filename: 'dist/stats.html',
+                // gzipSize: true,
+                // brotliSize: true,
+              })
               : undefined,
           ],
         },
@@ -97,7 +84,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // Drop console when production build.
       drop: command === 'serve' ? [] : ['console'],
     },
-  };
+  }
 
   // Write meta data.
   writeFileSync(
@@ -111,7 +98,7 @@ const meta: MetaInterface = {
 };
 export default meta;
 `
-  );
+  )
 
-  return config;
-});
+  return config
+})

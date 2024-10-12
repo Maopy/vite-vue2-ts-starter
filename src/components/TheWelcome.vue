@@ -161,15 +161,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
-import WelcomeItem from '@/components/WelcomeItem.vue';
-import CommunityIcon from '@/components/icons/IconCommunity.vue';
-import DocumentationIcon from '@/components/icons/IconDocumentation.vue';
-import EcosystemIcon from '@/components/icons/IconEcosystem.vue';
-import PluginIcon from '@/components/icons/IconPlugin.vue';
-import SupportIcon from '@/components/icons/IconSupport.vue';
-import ToolingIcon from '@/components/icons/IconTooling.vue';
+import WelcomeItem from '@/components/WelcomeItem.vue'
+import CommunityIcon from '@/components/icons/IconCommunity.vue'
+import DocumentationIcon from '@/components/icons/IconDocumentation.vue'
+import EcosystemIcon from '@/components/icons/IconEcosystem.vue'
+import PluginIcon from '@/components/icons/IconPlugin.vue'
+import SupportIcon from '@/components/icons/IconSupport.vue'
+import ToolingIcon from '@/components/icons/IconTooling.vue'
 
 export default defineComponent({
   components: {
@@ -181,5 +181,5 @@ export default defineComponent({
     ToolingIcon,
     WelcomeItem,
   },
-});
+})
 </script>

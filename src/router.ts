@@ -2,9 +2,9 @@
 import {
   createRouter,
   type RouteRecordRaw,
-} from '@logue/vue2-helpers/vue-router';
+} from '@logue/vue2-helpers/vue-router'
 
-import HomeView from '@/views/HomeView.vue';
+import HomeView from '@/views/HomeView.vue'
 
 /** Router Configure */
 const routes: RouteRecordRaw[] = [
@@ -21,13 +21,13 @@ const routes: RouteRecordRaw[] = [
     // which is lazy-loaded when the route is visited.
     component: async () => await import('@/views/AboutView.vue'),
   },
-];
+]
 
 /** Vue Router */
 const router = createRouter({
   base: import.meta.env.BASE_URL,
   mode: 'history', // abstract, hash, history
   routes,
-});
+})
 
-export default router;
+export default router
