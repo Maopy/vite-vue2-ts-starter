@@ -22,6 +22,14 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // https://github.com/vitejs/vite-plugin-vue2
       vue()
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
+      }
+    },
+
     // Resolver
     resolve: {
       // https://vitejs.dev/config/shared-options.html#resolve-alias

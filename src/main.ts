@@ -12,7 +12,6 @@ Vue.config.productionTip = false
 Vue.component('Teleport', teleport)
 
 const vue = new Vue({
-  // @ts-expect-error
   router,
   store,
   render: h => h(App),
